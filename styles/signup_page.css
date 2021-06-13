@@ -123,7 +123,29 @@ form input[type="radio"] {
     display: none;
 }
 
+form input[type="submit"] {
+    cursor: pointer;
+}
+
 form .button {
     height: 45px;
-    margin: 0
+    margin: 20px 0;
+} 
+
+form .button input {
+    font-size: 18px;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #00f260, #0575e6);
 }
+
+form .button input:hover {
+    background: linear-gradient(-135deg, #00f260, #0575e6);
+}
+
