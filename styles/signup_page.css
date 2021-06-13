@@ -48,3 +48,63 @@ body {
     width: 80px;
     background: linear-gradient(to right, #4285F4 20%, #DB4437 30%, #F4B400 75%, #0F9D58 20%);
 }
+
+.container form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    transition: all .5s ease;
+    border-width:2px;
+
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: #4285F4;
+}
+
+form .gender-details .gender-title {
+ font-size: 20px;
+ font-weight: 500;
+}
+
+form .gender-details .category {
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+.gender-details .category label {
+    display: flex;
+}
+
+.gender-details .category .dot {
+    height: 18px;
+    width: 18px;
+    background: red;
+    border-radius: 50%;
+
+}
