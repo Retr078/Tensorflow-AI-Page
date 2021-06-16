@@ -1,7 +1,20 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
 #snap {
-padding-top: 10px;
-font-size: 18px;
-  
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+   
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #00f260, #0575e6);
 }
 
 video {
@@ -9,6 +22,6 @@ video {
 } 
 canvas {
     margin-left: 500px;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 

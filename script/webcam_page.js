@@ -6,7 +6,6 @@ document.getElementById("snap").addEventListener("click", function () {
     context.drawImage(video, 0, 0, 640, 480);
 });
 
-
 let  myPreferredCameraDeviceId = "xDBy1WJccJfWaQKAahiYXWU1Ij5prw3PD+PyEUxdJMw="
 let  myExactCameraOrBustDeviceId = "xDBy1WJccJfWaQKAahiYXWU1Ij5prw3PD+PyEUxdJMw="
 if (navigator.mediaDevices.getUserMedia) {
