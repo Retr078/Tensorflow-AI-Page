@@ -1,0 +1,14 @@
+#snap {
+padding-top: 10px;
+font-size: 18px;
+  
+}
+
+video {
+   position: fixed;
+} 
+canvas {
+    margin-left: 500px;
+    margin-bottom: 100px;
+}
+

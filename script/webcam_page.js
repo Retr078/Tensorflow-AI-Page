@@ -7,13 +7,6 @@ document.getElementById("snap").addEventListener("click", function () {
 });
 
 
-
-document.getElementById("getImage").addEventListener("click", () => {
-    var base64image = document.getElementById("canvas");
-    var dataURL = base64image.toDataURL('image/jpeg', 1.0);
-    console.log(dataURL);
-})
-
 let  myPreferredCameraDeviceId = "xDBy1WJccJfWaQKAahiYXWU1Ij5prw3PD+PyEUxdJMw="
 let  myExactCameraOrBustDeviceId = "xDBy1WJccJfWaQKAahiYXWU1Ij5prw3PD+PyEUxdJMw="
 if (navigator.mediaDevices.getUserMedia) {
