@@ -1,85 +1,15 @@
-var video = document.querySelector("#videoElement");
+var video = document.getElementById('video');
 var canvas = document.getElementById('canvas');
-var context = canvas.getContext('2d');
-var localstream;
-document.getElementById("snap").addEventListener("click", function () {
-    context.drawImage(video, 0, 0, 640, 480);
-});
 
-let  myPreferredCameraDeviceId = "xDBy1WJccJfWaQKAahiYXWU1Ij5prw3PD+PyEUxdJMw="
-let  myExactCameraOrBustDeviceId = "xDBy1WJccJfWaQKAahiYXWU1Ij5prw3PD+PyEUxdJMw="
-if (navigator.mediaDevices.getUserMedia) {
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({
-            video: { deviceId: myPreferredCameraDeviceId }
-        })
-        .then(function (stream) {
-            localstream = stream;
-            video.srcObject = stream;
-            let mm  = stream.getVideoTracks();
-            console.log(mm);
-          
-        })
-        .catch(function (error) {
-            console.log("Something went wrong!");
-            console.log(error);
-        });
-} else {
-    console.log("BAG");
+        video:true
+    }).then (function(stream){
+        video.srcObject = stream;
+        video.play();
+    });
 }
-
-
-document.getElementById("stopCamera").addEventListener("click", function(){
-    console.log("localstream : ", localstream);
-    console.log("localstream.id : ", localstream.id);
-    console.log("localstream.getTracks : ", localstream.getTracks());
-    console.log("localstream.getVideoTracks : ", localstream.getVideoTracks());
-    console.log("localstream.getVideoTracks [0] : ", localstream.getVideoTracks()[0]);
-    localstream.getTracks()[0].stop();
-    console.log("Vid off");
-})
-
-
-video.addEventListener('ended', (event) => {
-    console.log('Video LISTENER - radi samo na FF i to kada se iskljuci');
-});
-
-navigator.mediaDevices.ondevicechange = function (event) {
-    console.log("PROMENIO - na FF samo radi kada se iskljuci, CHROME RADI KAKO TREBA");
-}
-navigator.mediaDevices.addEventListener('devicechange', (event) => {
-    console.log("REGISTER CHANGE - na FF radi samo kada se iskljuci, CHROME RADI KAKO TREBA");
-    console.log(event);
-});
-
-
-setInterval(() => {
-    
-    navigator.mediaDevices.enumerateDevices()
-        .then(function (devices) {
-
-            devices.filter(list => {
-                return list.kind === 'videoinput';
-            }).forEach(function (device) {
-                console.log(device);
-                console.log(device.kind + ": " + device.label + " id = " + device.deviceId);
-            });
-
-        })
-        .catch(function (err) {
-            console.log(err.name + ": " + err.message);
-        });
-    console.log("------ : --------");
-}, 10000);
-
-
-function detectWebcam(callback) {
-    let md = navigator.mediaDevices;
-    if (!md || !md.enumerateDevices) return callback(false);
-    md.enumerateDevices().then(devices => {
-        callback(devices.some(device => 'videoinput' === device.kind));
-    })
-}
-
-detectWebcam(function (hasWebcam) {
-    console.log('Webcam: ' + (hasWebcam ? 'yes' : 'no'));
+var Context = canvas.getContext('2d');
+document.getElementById('snap').addEventListener('click', function(){
+    Context.drawImage(video, 0, 0, 640, 480);
 })
