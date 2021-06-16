@@ -10,13 +10,14 @@
 </head>
 
 <body>
-    <video autoplay="true" id="videoElement" ></video>
-    
-    <button id="snap">Snap Photo</button>
-    <button id="stopCamera">STOP CAMERA</button>
+    <div class="container">
+        <video id="video" width="640" height="480" autoplay></video>
+        <canvas id="canvas" width="640" height="480"></canvas>
+    </div>
 
-    <canvas id="canvas" width="640" height="480"></canvas>
-    
+    <div class="btn">
+        <button id="snap">Take Photo</button>
+    </div>
 
     <script src="/script/webcam_page.js"></script>
 </body>
