@@ -17,3 +17,14 @@ body {
     align-items: center;
 }
 
+.btn {
+    width: 100vw;
+    height: auto;
+    text-align: center;
+}
+
+#snap {
+    width: auto;
+    padding: 1rem 2rem;
+    
+}
