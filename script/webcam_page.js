@@ -13,9 +13,11 @@ var Context = canvas.getContext('2d');
 document.getElementById('snap').addEventListener('click', function () {
     Context.drawImage(video, 0, 0, 640, 480);
     var image = new Image();
-   var img = Context.toDataURL();
+   var img = canvas.toDataURL();
     //document.getElementById('image_for_crop').appendChild(image);
     console.log(img);
+
+    
     
 })
 
