@@ -9,17 +9,21 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         video.play();
     });
 }
-var Context = canvas.getContext('2d');
-document.getElementById('snap').addEventListener('click', function () {
-    Context.drawImage(video, 0, 0, 640, 480);
-    var image = new Image();
-   var img = canvas.toDataURL();
-    //document.getElementById('image_for_crop').appendChild(image);
-    console.log(img);
 
+var Context = canvas.getContext('2d');
+
+    document.getElementById('snap').addEventListener('click', function () {
+        setInterval(makeImage, 5000);
+        
+    })
     
-    
-})
+    function makeImage() {
+        Context.drawImage(video, 0, 0, 640, 480);
+        var image = new Image();
+       var img = canvas.toDataURL();
+       //document.getElementById('image_for_crop').appendChild(image);
+       console.log(img);
+    }
 
 
 //setInterval
