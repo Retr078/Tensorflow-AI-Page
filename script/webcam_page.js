@@ -13,17 +13,30 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 var Context = canvas.getContext('2d');
 
 document.getElementById('snap').addEventListener('click', function () {
-    setInterval(makeImage, 5000);
+    let imgs = [];
+    var inter = setInterval(function makeImage(imgs) {
+        Context.drawImage(video, 0, 0, 640, 480);
+        var image = new Image();
+        var img = canvas.toDataURL();
+        //document.getElementById('image_for_crop').appendChild(image);
+        imgs.push(img);
 
+        if (imgs.length <= 4) {
+            clearInterval(inter);
+        }
+    }, 5000);
+
+    console.log(imgs);
 })
 
-function makeImage() {
-    Context.drawImage(video, 0, 0, 640, 480);
-    var image = new Image();
-    var img = canvas.toDataURL();
-    //document.getElementById('image_for_crop').appendChild(image);
-    console.log(img);
-}
+/*var timerId = setInterval(function(){
+
+    if(window.document.drops.isFinished()){
+        clearInterval(timerId);
+    }
+
+ },1000); */
+
 
 
 //setInterval
