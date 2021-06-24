@@ -17,11 +17,17 @@ var Context = canvas.getContext("2d");
 document.getElementById("snap").addEventListener("click", function () {
   let images = [];
 
+  var ar = ["right", "up", "down", "straight", ""];
+  document.getElementById("one").innerHTML = "left"
+
   var inter = setInterval(function makeImage() {
     Context.drawImage(video, 0, 0, 640, 480);
     var image = new Image();
     var img = canvas.toDataURL();
     //document.getElementById('image_for_crop').appendChild(image);
+
+    document.getElementById("one").innerHTML = ar[images.length]
+
     images.push(img);
     console.log(images.length);
     if (images.length > 4) {
@@ -33,7 +39,7 @@ document.getElementById("snap").addEventListener("click", function () {
   }, 5000);
 });
 
-//setInterval
+
 
 // dot code starts here
 // Background Animation
@@ -94,3 +100,5 @@ function myFunction() {
   }
 }
 // function to Toggle the password ends here
+
+//setting visible and invisible features
