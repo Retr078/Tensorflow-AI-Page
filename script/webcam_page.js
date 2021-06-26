@@ -17,7 +17,7 @@ var Context = canvas.getContext("2d");
 document.getElementById("snap").addEventListener("click", function () {
   let images = [];
 
-  var ar = [" Turn right", " Face up", " Face down", "Look straight", ""];
+  var ar = [" Turn right", " Face up", " Face down", "Look straight", "Done"];
   document.getElementById("one").innerHTML = " Turn left"
 
   var inter = setInterval(function makeImage() {
