@@ -17,8 +17,8 @@ var Context = canvas.getContext("2d");
 document.getElementById("snap").addEventListener("click", function () {
   let images = [];
 
-  var ar = ["right", "up", "down", "straight", ""];
-  document.getElementById("one").innerHTML = "left"
+  var ar = [" Turn right", " Face up", " Face down", "Look straight", ""];
+  document.getElementById("one").innerHTML = " Turn left"
 
   var inter = setInterval(function makeImage() {
     Context.drawImage(video, 0, 0, 640, 480);
@@ -70,15 +70,13 @@ balls.forEach((el, i, ra) => {
   };
 
   let anim = el.animate(
-    [
-      {
+    [{
         transform: "translate(0, 0)",
       },
       {
         transform: `translate(${to.x}rem, ${to.y}rem)`,
       },
-    ],
-    {
+    ], {
       duration: (Math.random() + 1) * 2000, // random duration
       direction: "alternate",
       fill: "both",
