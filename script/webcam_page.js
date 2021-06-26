@@ -100,3 +100,16 @@ function myFunction() {
 // function to Toggle the password ends here
 
 //setting visible and invisible features
+
+ /*$(document).ready(function(){
+
+  $("snap").keyup(function(){
+    var snap = $("snap").val();
+    $.post("url", {
+      variable: snap
+    },function(data, status){
+      $("id or class of an element").html(data);
+    });
+  });
+});
+*/
